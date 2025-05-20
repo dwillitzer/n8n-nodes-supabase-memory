@@ -329,7 +329,8 @@ export class SupabaseMemory implements INodeType {
     const credentials = await this.getCredentials('supabaseApi');
     const supabaseUrl = credentials.supabaseUrl as string;
     const supabaseKey = credentials.supabaseKey as string;
-    const useServiceRole = credentials.useServiceRole as boolean;
+    // Remove unused variable
+    // const useServiceRole = credentials.useServiceRole as boolean;
     
     // Initialize Supabase client
     const client = SupabaseClientManager.getClient({

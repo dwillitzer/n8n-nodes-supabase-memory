@@ -1,4 +1,4 @@
-import { INodeType, INodeTypeDescription } from 'n8n-workflow';
+import { IExecuteFunctions, INodeExecutionData, INodeType, INodeTypeDescription, NodeExecutionWithMetadata } from 'n8n-workflow';
 import { SupabaseMemory } from './nodes/SupabaseMemory/SupabaseMemory.node';
 import { SupabaseApi } from './credentials/SupabaseApi.credentials';
 
@@ -8,11 +8,9 @@ export class SupabaseMemoryNode implements INodeType {
   };
 
   // Simply forward execution to the actual implementation
-  // @ts-ignore - Ignoring TypeScript errors here as n8n runtime will provide the correct context
-  async execute() {
+  async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][] | NodeExecutionWithMetadata[][] | null> {
     const instance = new SupabaseMemory();
-    // @ts-ignore - This works at runtime even though TypeScript complains
-    return instance.execute.apply(this, arguments);
+    return instance.execute.call(this);
   }
 }
 

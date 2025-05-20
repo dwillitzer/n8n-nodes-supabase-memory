@@ -1,5 +1,4 @@
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
-import { IExecuteFunctions, INodeExecutionData } from 'n8n-workflow';
 
 export interface ISupabaseClientOptions {
   supabaseUrl: string;
@@ -9,7 +8,7 @@ export interface ISupabaseClientOptions {
 
 export class SupabaseClientManager {
   private static client: SupabaseClient | null = null;
-  private static schema: string = 'dynamictools';
+  private static schema = 'dynamictools';
 
   /**
    * Initialize or return an existing Supabase client
@@ -68,7 +67,7 @@ export class SupabaseClientManager {
     client: SupabaseClient,
     sessionId: string,
     agentName?: string,
-    limit: number = 10,
+    limit = 10,
   ): Promise<any> {
     let query = client
       .from(`${this.schema}.agent_memory`)
