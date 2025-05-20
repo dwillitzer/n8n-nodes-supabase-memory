@@ -11,14 +11,14 @@
     "agent"
   ],
   "license": "MIT",
-  "homepage": "https://github.com/username/n8n-nodes-supabase-memory",
+  "homepage": "https://github.com/dwillitzer/n8n-nodes-supabase-memory",
   "author": {
-    "name": "Your Name",
-    "email": "your.email@example.com"
+    "name": "dwillitzer",
+    "email": "dwillitzer@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/username/n8n-nodes-supabase-memory.git"
+    "url": "git+https://github.com/dwillitzer/n8n-nodes-supabase-memory.git"
   },
   "main": "index.js",
   "scripts": {
